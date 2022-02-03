@@ -1,0 +1,252 @@
+.bundle
+.built-image
+
+##########################
+## Java
+##########################
+*.class
+.mtj.tmp/
+*.jar
+*.war
+*.ear
+hs_err_pid*
+
+##########################
+## Maven
+##########################
+target/
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+release.properties
+# Avoid ignoring Maven wrapper jar file (.jar files are usually ignored)
+!maven-wrapper.jar
+
+##########################
+## IntelliJ
+##########################
+*.iml
+.idea/
+*.ipr
+*.iws
+out/
+.idea_modules/
+
+##########################
+## Eclipse
+##########################
+.metadata
+.classpath
+.project
+.settings/
+bin/
+tmp/
+*.tmp
+*.bak
+*.swp
+*~.nib
+local.properties
+.loadpath
+
+##########################
+## STS
+##########################
+.apt_generated
+.factorypath
+.settings
+.springBeans
+.sts4-cache
+
+##########################
+## NetBeans
+##########################
+nbproject/private/
+build/
+nbbuild/
+dist/
+nbdist/
+nbactions.xml
+nb-configuration.xml
+
+##########################
+## OS X
+##########################
+.DS_Store
+
+##########################
+## Gradle
+##########################
+## Gradle template
+.gradle
+# build/
+# Ignore Gradle GUI configuration
+gradle-app.setting
+# Avoid ignoring Gradle wrapper jar file (.jar files are usually ignored)
+!gradle-wrapper.jar
+
+##########################
+## SonarQube
+##########################
+.scannerwork
+sonar-project.properties
+
+##########################
+## Node.JS
+##########################
+node_modules/
+package-lock.json
+
+##########################
+## Emacs dotfiles
+##########################
+*.db
+*.elc
+*.pyc
+*.stackdump
+*~
+.*.lock
+.DS_Store
+.cache
+.cvsignore
+.emacs.desktop
+.emacs.desktop.lock
+.mc-lists.el
+.places
+.python-environments/
+.recentf
+.recentf~
+.smex-items
+smex-items
+.svn
+/*.zip
+/.achievements
+/.bookmarks.el
+/.cask/
+/.emacs.desktop
+/.historian
+/.mc-lists.el
+/.my-keybindings.el.swp
+/.org-id-locations
+/.session
+/.smex-items
+/.sqli_history
+/.sx/
+/.uptimes.el
+/TODO
+/ac-comphist.dat
+/anaconda-mode/
+/anything-c-adaptive-history
+/auto-save-list
+/custom.el
+/ditaa*.jar
+/elpa
+/elpa-*
+/emms/
+/eshell
+/eww-bookmarks
+/frame-restore-parameters
+/helm-adaptive-history
+/history
+/ido.last
+/image-dired/
+/magithub
+/network-security.data
+/newsticker
+/org-clock-save.el
+/plantuml.jar
+/projectile-bookmarks.eld
+/rake.cache
+/recentf
+/session.*
+/srecode-map.el
+/swank
+/thumbs/
+/tramp
+/url/cache
+/url/cookies
+/var
+/viper
+CVS
+\#*
+ac-comphist.dat
+auto-save-list/
+bookmarks
+cookies
+crown/
+edts/
+elnode/
+elpa/
+eproject.lst
+eshell/alias
+eshell/history
+eshell/lastdir
+export/
+my-org/
+org-files/
+projectile-bookmarks.eld
+projectile.cache
+python-*-docs-html
+semanticdb/
+server/
+site-lisp/package/
+tmp/
+tramp
+var/
+# Private directory
+private/
+!private/README.md
+!private/snippets/README.md
+!private/local/README.md
+/games/
+
+##########################
+## Hammerspoon dotfiles
+##########################
+init-local.lua
+init.html
+Spoons/*
+seal_plugins/*
+.DS_Store
+local/*
+
+# Compiled Lua sources
+luac.out
+
+# luarocks build files
+*.src.rock
+*.zip
+*.tar.gz
+
+# Object files
+*.o
+*.os
+*.ko
+*.obj
+*.elf
+
+# Precompiled Headers
+*.gch
+*.pch
+
+# Libraries
+*.lib
+*.a
+*.la
+*.lo
+*.def
+*.exp
+
+# Shared objects (inc. Windows DLLs)
+*.dll
+*.so
+*.so.*
+*.dylib
+
+# Executables
+*.exe
+*.out
+*.app
+*.i*86
+*.x86_64
+*.hex
