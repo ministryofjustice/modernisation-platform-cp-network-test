@@ -1,19 +1,19 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: helloworld-rubyapp
+  name: nettest
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: helloworld-rubyapp
+      app: nettest
   template:
     metadata:
       labels:
-        app: helloworld-rubyapp
+        app: nettest
     spec:
       containers:
-      - name: rubyapp
+      - name: nettest
         image: ministryofjustice/cloud-platform-helloworld-ruby:1.1
         ports:
         - containerPort: 4567
