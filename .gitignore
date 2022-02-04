@@ -1,3 +1,23 @@
+######################
+# Project Specific
+######################
+*artifactory-api-key*
+**/*artifactory-api-key*
+*-access-token*
+*-secret
+*-secret.yaml
+*-secret.txt
+users.htpasswd
+temp/
+*/temp/**
+**/temp.adoc
+HELP.md
+.gradle
+build/
+*/build/**
+!**/src/main/**
+!**/src/test/**
+operator-sdk
 .bundle
 .built-image
 
