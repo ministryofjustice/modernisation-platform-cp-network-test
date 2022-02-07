@@ -1,7 +1,7 @@
-IMAGE := ministryofjustice/cloud-platform-helloworld-ruby
-TAG := 1.1
+IMAGE := ministryofjustice/modernisation-platform-nettest
+TAG := 1.0
 
-.built-image: Dockerfile Gemfile Gemfile.lock makefile
+.built-image: Dockerfile package.json makefile
 	docker build -t $(IMAGE) .
 	touch .built-image
 

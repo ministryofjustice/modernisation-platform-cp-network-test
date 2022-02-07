@@ -13,7 +13,8 @@ spec:
         app: nettest
     spec:
       containers:
-      - name: nettest
-        image: 754256621582.dkr.ecr.eu-west-2.amazonaws.com/modernisation-platform/nettest-ecr:1.0
-        ports:
-        - containerPort: 4567
+        - name: nettest
+          image: 754256621582.dkr.ecr.eu-west-2.amazonaws.com/modernisation-platform/nettest-ecr:1.0
+          ports:
+            - containerPort: 3000
+          imagePullPolicy: Always

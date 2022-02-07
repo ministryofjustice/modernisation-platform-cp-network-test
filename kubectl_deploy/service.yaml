@@ -6,8 +6,8 @@ metadata:
     app: nettest-service
 spec:
   ports:
-  - port: 4567
+  - port: 3000
     name: http
-    targetPort: 4567
+    targetPort: 3000
   selector:
     app: nettest

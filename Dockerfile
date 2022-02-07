@@ -1,18 +1,7 @@
-FROM ruby:2.5-alpine
-
-RUN addgroup -g 1000 -S appgroup && \
-    adduser -u 1000 -S appuser -G appgroup
-
-WORKDIR /app
-
-COPY Gemfile Gemfile.lock ./
-
-RUN bundle install
-
-COPY app.rb ./
-
-RUN chown -R appuser:appgroup /app
-
+FROM node:latest
+WORKDIR /
+COPY package*.json app.js ./
+RUN npm install
 USER 1000
-
-CMD ["ruby", "app.rb"]
+EXPOSE 3000
+CMD ["node", "app.js"]
