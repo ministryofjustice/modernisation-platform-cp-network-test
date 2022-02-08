@@ -8,9 +8,9 @@ COPY package*.json app.js ./
 
 RUN set -x \
 	&& pacman -Syyu --needed --noconfirm \
-    && pacman -S --needed --noconfirm nodejs npm which awk \
+    && pacman -S --needed --noconfirm nodejs npm which awk git base-devel \
        nano \
-       ansible curl tracerout nmap vulscan \
+       ansible curl traceroute nmap vulscan \
     && npm install
 
 USER 1000
