@@ -16,6 +16,14 @@ Open http://localhost:3000
 
 Login to https://login.live.cloud-platform.service.justice.gov.uk and download the `~/.kube/config` file.
 
+Minimize the permissions on the file
+
+    chmod 600 ~/.kube/config
+
+Tell kubectl to use this config
+
+    kubectl config use-context live.cloud-platform.service.justice.gov.uk
+ 
 ## Connect a shell into the running container
 
 ```
