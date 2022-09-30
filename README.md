@@ -1,5 +1,6 @@
 # Container bundled with utilities for network testing
-[![repo standards badge](https://img.shields.io/badge/dynamic/json?color=blue&style=for-the-badge&logo=github&label=MoJ%20Compliant&query=%24.data%5B%3F%28%40.name%20%3D%3D%20%22modernisation-platform-nettest%22%29%5D.status&url=https%3A%2F%2Foperations-engineering-reports.cloud-platform.service.justice.gov.uk%2Fgithub_repositories)](https://operations-engineering-reports.cloud-platform.service.justice.gov.uk/github_repositories#modernisation-platform-nettest "Link to report")
+
+[![repo standards badge](https://img.shields.io/badge/dynamic/json?color=blue&style=for-the-badge&logo=github&label=MoJ%20Compliant&query=%24.result&url=https%3A%2F%2Foperations-engineering-reports.cloud-platform.service.justice.gov.uk%2Fapi%2Fv1%2Fcompliant_public_repositories%2modernisation-platform-cp-network-test)](https://operations-engineering-reports.cloud-platform.service.justice.gov.uk/public-github-repositories.html#modernisation-platform-cp-network-test "Link to report")
 
 ## Run the Node.JS application locally
 
@@ -24,7 +25,7 @@ Minimize the permissions on the file
 Tell kubectl to use this config
 
     kubectl config use-context live.cloud-platform.service.justice.gov.uk
- 
+
 ## Connect a shell into the running container
 
 ```
@@ -63,6 +64,7 @@ Retrieve ECR info
 Configure the AWS profile
 
 ~/.aws/config
+
 ```
 [profile nettest]
 region = eu-west-2
