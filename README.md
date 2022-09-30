@@ -25,7 +25,7 @@ Minimize the permissions on the file
 Tell kubectl to use this config
 
     kubectl config use-context live.cloud-platform.service.justice.gov.uk
- 
+
 ## Connect a shell into the running container
 
 ```
@@ -64,6 +64,7 @@ Retrieve ECR info
 Configure the AWS profile
 
 ~/.aws/config
+
 ```
 [profile nettest]
 region = eu-west-2
