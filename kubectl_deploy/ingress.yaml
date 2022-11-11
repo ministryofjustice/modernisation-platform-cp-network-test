@@ -9,16 +9,16 @@ metadata:
 spec:
   ingressClassName: default
   tls:
-  - hosts:
-    - nettest.apps.live.cloud-platform.service.justice.gov.uk
+    - hosts:
+        - nettest.apps.live.cloud-platform.service.justice.gov.uk
   rules:
-  - host: nettest.apps.live.cloud-platform.service.justice.gov.uk
-    http:
-      paths:
-      - path: /
-        pathType: ImplementationSpecific
-        backend:
-          service:
-            name: nettest-service
-            port:
-              number: 3000
+    - host: nettest.apps.live.cloud-platform.service.justice.gov.uk
+      http:
+        paths:
+          - path: /
+            pathType: ImplementationSpecific
+            backend:
+              service:
+                name: nettest-service
+                port:
+                  number: 3000
