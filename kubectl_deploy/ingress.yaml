@@ -1,4 +1,4 @@
-apiVersion: networking.k8s.io/v1beta1
+apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: nettest-ingress
@@ -7,6 +7,7 @@ metadata:
     external-dns.alpha.kubernetes.io/set-identifier: nettest-ingress-nettest-green
     external-dns.alpha.kubernetes.io/aws-weight: "100"
 spec:
+  ingressClassName: default
   tls:
   - hosts:
     - nettest.apps.live.cloud-platform.service.justice.gov.uk
@@ -15,6 +16,9 @@ spec:
     http:
       paths:
       - path: /
+        pathType: ImplementationSpecific
         backend:
-          serviceName: nettest-service
-          servicePort: 3000
+          service:
+            name: nettest-service
+            port:
+              number: 3000
