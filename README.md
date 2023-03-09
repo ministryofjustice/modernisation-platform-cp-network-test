@@ -49,6 +49,10 @@ In the above
 - `curl: (28) Connection timed out after 5001 milliseconds` means NO
 - `curl: (56) Recv failure: Connection reset by peer` means YES
 
+Run a speed test
+
+    iperf3 -c ping.online.net -p 5209
+
 ## How to redeploy the container into the Cloud Platform
 
 Change the application code and/or the Dockerfile
@@ -83,11 +87,11 @@ aws ecr get-login-password --region eu-west-2 --profile nettest \
 
 Tag the image and push it to your ECR
 
-    docker tag nettest 754256621582.dkr.ecr.eu-west-2.amazonaws.com/modernisation-platform/nettest-ecr:1.0
+    docker tag nettest 754256621582.dkr.ecr.eu-west-2.amazonaws.com/modernisation-platform/nettest-ecr:1.2
 
 Push
 
-    docker push 754256621582.dkr.ecr.eu-west-2.amazonaws.com/modernisation-platform/nettest-ecr:1.0
+    docker push 754256621582.dkr.ecr.eu-west-2.amazonaws.com/modernisation-platform/nettest-ecr:1.2
 
 Update the image in `kubectl_deploy/deployment.yaml`, then deploy
 
