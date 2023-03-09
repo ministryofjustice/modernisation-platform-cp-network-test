@@ -10,7 +10,7 @@ RUN set -x \
 	&& pacman -Syyu --needed --noconfirm \
     && pacman -S --needed --noconfirm nodejs npm which awk git base-devel \
        nano \
-       ansible curl traceroute nmap vulscan gnu-netcat \
+       ansible curl traceroute nmap vulscan gnu-netcat iperf3 inetutils \
     && npm install \
     && echo 'nettest ALL=(ALL) NOPASSWD: ALL' > /etc/sudoers.d/20-nettest-nopasswd \
     && chmod 0440 /etc/sudoers.d/20-nettest-nopasswd
