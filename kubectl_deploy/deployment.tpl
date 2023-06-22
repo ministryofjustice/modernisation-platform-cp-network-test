@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: nettest
-          image: 754256621582.dkr.ecr.eu-west-2.amazonaws.com/modernisation-platform/nettest-ecr:1.2
+          image: ${ECR_URL}:${IMAGE_TAG}
           ports:
             - containerPort: 3000
           imagePullPolicy: Always
