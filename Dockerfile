@@ -23,7 +23,7 @@ RUN set -x \
     && git clone https://aur.archlinux.org/trizen.git $HOME/h-aur \
     && (cd $HOME/h-aur && makepkg -si --needed --noconfirm) \
     && trizen --version \
-    && trizen -S --needed --noconfirm --noedit fing tcptraceroute
+    && trizen -S --needed --noconfirm --noedit tcptraceroute
 
 EXPOSE 3000
 CMD ["node", "app.js"]
