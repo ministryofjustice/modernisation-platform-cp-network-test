@@ -20,6 +20,7 @@ build/
 operator-sdk
 .bundle
 .built-image
+megalinter-reports
 
 ##########################
 ## Java
