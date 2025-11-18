@@ -18,7 +18,7 @@ RUN set -x \
     && rm -rf /var/cache/pacman/pkg/*
 
 USER nettest
-ENV HOME /home/nettest
+ENV HOME=/home/nettest
 
 # Install AUR helper and tcptraceroute
 RUN set -x \
