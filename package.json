@@ -18,6 +18,6 @@
   },
   "homepage": "https://github.com/ministryofjustice/modernisation-platform-nettest#readme",
   "dependencies": {
-    "express": "^4.17.2"
+    "express": "^5.1.0"
   }
 }
