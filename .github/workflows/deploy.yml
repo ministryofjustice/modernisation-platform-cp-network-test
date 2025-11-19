@@ -13,7 +13,7 @@ jobs:
     runs-on: ubuntu-latest
     if: github.event.ref != 'refs/heads/main'
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@93cb6efe18208431cddfb8368fd83d5badbf9bfd # v5.0.1
       - run: docker build .
 
   build-push-and-deploy:
@@ -24,16 +24,16 @@ jobs:
       contents: read  # This is required for actions/checkout
     steps:
       # Checkout GitHub repository
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@93cb6efe18208431cddfb8368fd83d5badbf9bfd # v5.0.1
 
       # Assume role in Cloud Platform
-      - uses: aws-actions/configure-aws-credentials@v5
+      - uses: aws-actions/configure-aws-credentials@00943011d9042930efac3dcd3a170e4273319bc8 # v5.1.0
         with:
           role-to-assume: ${{ secrets.ECR_ROLE_TO_ASSUME }}
           aws-region: ${{ vars.ECR_REGION }}
 
       # Login to container repository
-      - uses: aws-actions/amazon-ecr-login@v1
+      - uses: aws-actions/amazon-ecr-login@062b18b96a7aff071d4dc91bc00c4c1a7945b076 # v2.0.1
         id: login-ecr
 
       # Build and push a Docker image to the container repository
