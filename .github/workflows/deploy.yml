@@ -13,7 +13,7 @@ jobs:
     runs-on: ubuntu-latest
     if: github.event.ref != 'refs/heads/main'
     steps:
-      - uses: actions/checkout@8e8c483db84b4bee98b60c0593521ed34d9990e8 # v6.0.1
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
       - run: docker build .
 
   build-push-and-deploy:
@@ -24,7 +24,7 @@ jobs:
       contents: read  # This is required for actions/checkout
     steps:
       # Checkout GitHub repository
-      - uses: actions/checkout@8e8c483db84b4bee98b60c0593521ed34d9990e8 # v6.0.1
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
 
       # Assume role in Cloud Platform
       - uses: aws-actions/configure-aws-credentials@61815dcd50bd041e203e49132bacad1fd04d2708 # v5.1.1
