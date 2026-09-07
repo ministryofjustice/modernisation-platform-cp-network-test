@@ -17,6 +17,8 @@ jobs:
       contents: read
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
       - run: docker build .
 
   build-push-and-deploy:
@@ -28,6 +30,8 @@ jobs:
     steps:
       # Checkout GitHub repository
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
 
       # Assume role in Cloud Platform
       - uses: aws-actions/configure-aws-credentials@cbe3b392738ccf3f987d68400dafcf4b0624a56c # v6.2.4
@@ -41,8 +45,8 @@ jobs:
 
       # Build and push a Docker image to the container repository
       - run: |
-          docker build -t $REGISTRY/$REPOSITORY:$IMAGE_TAG .
-          docker push $REGISTRY/$REPOSITORY:$IMAGE_TAG
+          docker build -t "$REGISTRY/$REPOSITORY:$IMAGE_TAG" .
+          docker push "$REGISTRY/$REPOSITORY:$IMAGE_TAG"
         env:
           REGISTRY: ${{ steps.login-ecr.outputs.registry }}
           REPOSITORY: ${{ vars.ECR_REPOSITORY }}
@@ -52,7 +56,7 @@ jobs:
       - name: Update image tag
         env:
           ECR_URL: ${{ secrets.ECR_URL }}
-        run: export IMAGE_TAG=${{ github.sha }} && cat kubectl_deploy/deployment.tpl | envsubst > kubectl_deploy/kubernetes-deploy.yaml
+        run: export IMAGE_TAG="${{ github.sha }}" && cat kubectl_deploy/deployment.tpl | envsubst > kubectl_deploy/kubernetes-deploy.yaml
 
       # Deploy to the cluster
       - name: Authenticate to the cluster
@@ -60,10 +64,10 @@ jobs:
           KUBE_CLUSTER: ${{ secrets.KUBE_CLUSTER }}
         run: |
           echo "${{ secrets.KUBE_CERT }}" > ca.crt
-          kubectl config set-cluster ${KUBE_CLUSTER} --certificate-authority=./ca.crt --server=https://${KUBE_CLUSTER}
-          kubectl config set-credentials deploy-user --token=${{ secrets.KUBE_TOKEN }}
-          kubectl config set-context ${KUBE_CLUSTER} --cluster=${KUBE_CLUSTER} --user=deploy-user --namespace=${{ secrets.KUBE_NAMESPACE }}
-          kubectl config use-context ${KUBE_CLUSTER}
+          kubectl config set-cluster "$KUBE_CLUSTER" --certificate-authority=./ca.crt --server="https://${KUBE_CLUSTER}"
+          kubectl config set-credentials deploy-user --token="${{ secrets.KUBE_TOKEN }}"
+          kubectl config set-context "$KUBE_CLUSTER" --cluster="$KUBE_CLUSTER" --user=deploy-user --namespace="${{ secrets.KUBE_NAMESPACE }}"
+          kubectl config use-context "$KUBE_CLUSTER"
       - name: Apply the updated manifest
         run: |
-          kubectl -n ${KUBE_NAMESPACE} apply -f kubectl_deploy/kubernetes-deploy.yaml
+          kubectl -n "$KUBE_NAMESPACE" apply -f kubectl_deploy/kubernetes-deploy.yaml
