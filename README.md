@@ -10,13 +10,13 @@ npm install express
 node app.js
 ```
 
-Open http://localhost:3000
+Open <http://localhost:3000>
 
 > The application at the moment does not have any functionality but only serves as a placeholder for potentially adding features later on. Network testing is carried out by connecting a shell into the running container and performing some diagnostic commands as shown in the sections below.
 
 ## Connect to the Cloud Platform AWS EKS cluster
 
-Login to https://login.live.cloud-platform.service.justice.gov.uk and download the `~/.kube/config` file.
+Login to <https://login.live.cloud-platform.service.justice.gov.uk> and download the `~/.kube/config` file.
 
 Minimize the permissions on the file
 
@@ -97,7 +97,7 @@ Update the image in `kubectl_deploy/deployment.yaml`, then deploy
 
     kubectl -n nettest apply -f kubectl_deploy
 
-Open https://nettest.apps.live.cloud-platform.service.justice.gov.uk
+Open <https://nettest.apps.live.cloud-platform.service.justice.gov.uk>
 
 Additional useful commands
 
@@ -106,7 +106,7 @@ Additional useful commands
 
 ## References
 
-1. https://user-guide.cloud-platform.service.justice.gov.uk/documentation/getting-started/env-create.html#creating-a-cloud-platform-environment
+1. <https://user-guide.cloud-platform.service.justice.gov.uk/documentation/getting-started/env-create.html#creating-a-cloud-platform-environment>
 
 
 [Standards Link]: https://github-community.service.justice.gov.uk/repository-standards/modernisation-platform-cp-network-test "Repo standards badge."
