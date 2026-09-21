@@ -4,7 +4,7 @@
 
 ## Run the Node.JS application locally
 
-```
+```shell
 npm init -y
 npm install express
 node app.js
@@ -28,7 +28,7 @@ Tell kubectl to use this config
 
 ## Connect a shell into the running container
 
-```
+```shell
 kubectl config set-context --current --namespace=nettest
 kubectl get pods
 kubectl exec --stdin --tty nettest-5948d76c47-g56s2 -- bash
@@ -69,7 +69,7 @@ Configure the AWS profile
 
 ~/.aws/config
 
-```
+```shell
 [profile nettest]
 region = eu-west-2
 output=json
@@ -79,7 +79,7 @@ aws_secret_access_key=<refer to the ECR info above>
 
 Login to the repository
 
-```
+```shell
 aws ecr get-login-password --region eu-west-2 --profile nettest \
 | docker login --username AWS --password-stdin \
 754256621582.dkr.ecr.eu-west-2.amazonaws.com
@@ -107,7 +107,6 @@ Additional useful commands
 ## References
 
 1. <https://user-guide.cloud-platform.service.justice.gov.uk/documentation/getting-started/env-create.html#creating-a-cloud-platform-environment>
-
 
 [Standards Link]: https://github-community.service.justice.gov.uk/repository-standards/modernisation-platform-cp-network-test "Repo standards badge."
 [Standards Icon]: https://github-community.service.justice.gov.uk/repository-standards/api/modernisation-platform-cp-network-test/badge
