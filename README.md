@@ -20,11 +20,15 @@ Login to <https://login.live.cloud-platform.service.justice.gov.uk> and download
 
 Minimize the permissions on the file
 
-    chmod 600 ~/.kube/config
+```shell
+chmod 600 ~/.kube/config
+```
 
 Tell kubectl to use this config
 
-    kubectl config use-context live.cloud-platform.service.justice.gov.uk
+```shell
+kubectl config use-context live.cloud-platform.service.justice.gov.uk
+```
 
 ## Connect a shell into the running container
 
@@ -38,11 +42,15 @@ kubectl exec --stdin --tty nettest-5948d76c47-g56s2 -- bash
 
 Check if the container has access to the internet
 
-    curl ipinfo.io
+```shell
+curl ipinfo.io
+```
 
 Check if the container can access port 1521 at the IP address 10.26.12.202
 
-    curl --connect-timeout 5 10.26.12.202:1521
+```shell
+curl --connect-timeout 5 10.26.12.202:1521
+```
 
 In the above
 
@@ -51,7 +59,9 @@ In the above
 
 Run a speed test
 
-    iperf3 -c ping.online.net -p 5209
+```shell
+iperf3 -c ping.online.net -p 5209
+```
 
 ## How to redeploy the container into the Cloud Platform
 
@@ -59,15 +69,21 @@ Change the application code and/or the Dockerfile
 
 Build the docker image
 
-    docker build -t nettest .
+```shell
+docker build -t nettest .
+```
 
 Retrieve ECR info
 
-    cloud-platform decode-secret -n nettest -s ecr-repo-nettest
+```shell
+cloud-platform decode-secret -n nettest -s ecr-repo-nettest
+```
 
 Configure the AWS profile
 
+```shell
 ~/.aws/config
+```
 
 ```shell
 [profile nettest]
@@ -87,22 +103,30 @@ aws ecr get-login-password --region eu-west-2 --profile nettest \
 
 Tag the image and push it to your ECR
 
-    docker tag nettest 754256621582.dkr.ecr.eu-west-2.amazonaws.com/modernisation-platform/nettest-ecr:1.2
+```shell
+docker tag nettest 754256621582.dkr.ecr.eu-west-2.amazonaws.com/modernisation-platform/nettest-ecr:1.2
+```
 
 Push
 
-    docker push 754256621582.dkr.ecr.eu-west-2.amazonaws.com/modernisation-platform/nettest-ecr:1.2
+```shell
+docker push 754256621582.dkr.ecr.eu-west-2.amazonaws.com/modernisation-platform/nettest-ecr:1.2
+```
 
 Update the image in `kubectl_deploy/deployment.yaml`, then deploy
 
-    kubectl -n nettest apply -f kubectl_deploy
+```shell
+kubectl -n nettest apply -f kubectl_deploy
+```
 
 Open <https://nettest.apps.live.cloud-platform.service.justice.gov.uk>
 
 Additional useful commands
 
-    kubectl delete pod nettest-76bfd79fd9-9xfr6
-    kubectl describe pod nettest-76bfd79fd9-9xfr6
+```shell
+kubectl delete pod nettest-76bfd79fd9-9xfr6
+kubectl describe pod nettest-76bfd79fd9-9xfr6
+```
 
 ## References
 
