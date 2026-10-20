@@ -1,6 +1,6 @@
 # Container bundled with utilities for network testing
 
-[![Standards Icon]][Standards Link] [![Format Code Icon]][Format Code Link] [![Scorecards Icon]][Scorecards Link] [![SCA Icon]][SCA Link]
+[![Standards Icon]][Standards Link] [![Scorecards Icon]][Scorecards Link] [![Code Quality Icon]][Code Quality Link]
 
 ## Run the Node.JS application locally
 
@@ -134,9 +134,7 @@ kubectl describe pod nettest-76bfd79fd9-9xfr6
 
 [Standards Link]: https://github-community.service.justice.gov.uk/repository-standards/modernisation-platform-cp-network-test "Repo standards badge."
 [Standards Icon]: https://github-community.service.justice.gov.uk/repository-standards/api/modernisation-platform-cp-network-test/badge
-[Format Code Icon]: https://img.shields.io/github/actions/workflow/status/ministryofjustice/modernisation-platform-cp-network-test/format-code.yml?labelColor=231f20&style=for-the-badge&label=Formate%20Code
-[Format Code Link]: https://github.com/ministryofjustice/modernisation-platform-cp-network-test/actions/workflows/format-code.yml
 [Scorecards Icon]: https://img.shields.io/github/actions/workflow/status/ministryofjustice/modernisation-platform-cp-network-test/scorecards.yml?branch=main&labelColor=231f20&style=for-the-badge&label=Scorecards
 [Scorecards Link]: https://github.com/ministryofjustice/modernisation-platform-cp-network-test/actions/workflows/scorecards.yml
-[SCA Icon]: https://img.shields.io/github/actions/workflow/status/ministryofjustice/modernisation-platform-cp-network-test/code-scanning.yml?branch=main&labelColor=231f20&style=for-the-badge&label=Secure%20Code%20Analysis
-[SCA Link]: https://github.com/ministryofjustice/modernisation-platform-cp-network-test/actions/workflows/code-scanning.yml
+[Code Quality Icon]: https://img.shields.io/github/actions/workflow/status/ministryofjustice/modernisation-platform-cp-network-test/code-quality.yml?branch=main&labelColor=231f20&style=for-the-badge&label=Code%20Quality
+[Code Quality Link]: https://github.com/ministryofjustice/modernisation-platform-cp-network-test/actions/workflows/code-quality.yml
